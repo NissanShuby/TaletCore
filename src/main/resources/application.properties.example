@@ -1,0 +1,46 @@
+spring.application.name=Temp
+
+# Server Configuration
+server.port=8081
+
+
+# Database Configuration
+# IMPORTANT: Replace with your actual database credentials
+spring.datasource.url=jdbc:postgresql://localhost:5432/your_database_name
+spring.datasource.username=your_username
+spring.datasource.password=your_password
+spring.datasource.driver-class-name=org.postgresql.Driver
+#create
+#update
+# JPA Configuration
+spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+
+# MongoDB Configuration (for sessions)
+spring.data.mongodb.host=localhost
+spring.data.mongodb.port=27017
+spring.data.mongodb.database=temp_sessions
+
+# Logging
+logging.level.com.Temp=DEBUG
+logging.level.org.springframework.web=DEBUG
+
+# Static Resources - Serve React app
+spring.web.resources.static-locations=classpath:/static/
+spring.mvc.pathmatch.matching-strategy=ant_path_matcher
+
+# File Upload Configuration
+spring.servlet.multipart.enabled=true
+spring.servlet.multipart.max-file-size=10MB
+spring.servlet.multipart.max-request-size=10MB
+spring.servlet.multipart.file-size-threshold=2KB
+
+# File Storage Configuration
+file.upload-dir=./uploads/cv/
+
+# Gemini API Configuration
+# IMPORTANT: Replace with your actual Gemini API key
+gemini.api.url=https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent
+gemini.api.key=YOUR_GEMINI_API_KEY_HERE
+
